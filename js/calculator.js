@@ -7,10 +7,20 @@ var n2 = prompt('Escolha um número:')
 n2 = parseFloat(n2)
 imprimi(n2)
 
+
 function iniciaCalc(simbolo) {
     var n1 = document.querySelector('#output').textContent
     var n1 = prompt('Digite outro numero')
     n1 = parseFloat(n1)
+    if(n1 === undefined || n2 === undefined){
+        alert("Erro encontrado!")
+        throw new Error('Erro:Você precisa definir um valora valido!');
+    }
+
+    if(isNaN(n1) || isNaN(n2)){
+        alert("Erro encontrado!")
+        throw new Error('Erro: Valor passado não permitido!')
+    }
     var sms = calcular(simbolo,n1,n2)
     imprimi(sms)
 }
